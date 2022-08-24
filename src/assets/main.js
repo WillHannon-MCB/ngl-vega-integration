@@ -4,6 +4,13 @@ and NGL structure and connect them together so that signals emitted
 from the Vega plot can be used to update the NGL structure object.
 */  
 
+// Stand in constants - these will be selected or determined from the data
+const color = "cornflowerblue";
+const chain = "A";
+
+// Array to hold the selected sites
+const selectedSites = [];
+
 //  Create the stage
 const stage = new NGL.Stage( "protein", {backgroundColor: "white"});
 
@@ -26,8 +33,8 @@ vegaEmbed("#vega-viz", spec)
     .then(result => result.view.addEventListener('click', (event, item) => {
         if (item !== null ) {
             if (item.datum.site !== undefined) {
-                console.log(makeSiteString(item.datum.site, "A"))
-                selectSiteOnProtein(makeSiteString(item.datum.site, "A"), "cornflowerblue")
+                console.log(item.datum)
+                colorSiteOnProtein(item.datum.site, chain, color)
             }
         }
     }) )
