@@ -5,7 +5,7 @@ from the Vega plot can be used to update the NGL structure object.
 */  
 
 // Stand in constants - these will be selected or determined from the data
-const color = "cornflowerblue";
+const color = "#1f77b4";
 const chain = "A";
 
 // Array to hold the selected sites
@@ -32,7 +32,7 @@ const spec = "src/static/protein.chart.json";
 vegaEmbed("#vega-viz", spec)        
     .then(result => result.view.addEventListener('click', (event, item) => {
         if (item !== null ) {
-            if (item.datum.site !== undefined) {
+            if (item.datum.site !== undefined && item.datum.metric !== undefined) {
                 console.log(item.datum)
                 colorSiteOnProtein(item.datum.site, chain, color)
             }
