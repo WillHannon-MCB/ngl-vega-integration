@@ -26,7 +26,7 @@ stage.loadFile("rcsb://6XR8").then(o => {
 });
 
 // Define the plot spec
-const spec = "src/static/protein.chart.json";
+const spec = "src/static/example.chart.json";
 
 // Embed the plot
 vegaEmbed("#vega-viz", spec)        
