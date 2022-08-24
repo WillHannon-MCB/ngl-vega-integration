@@ -27,6 +27,7 @@ stage.loadFile("rcsb://6XR8").then(o => {
 
 // Define the plot spec
 const spec = "src/static/example.chart.json";
+const heatmapSpec = "src/static/heatmap.chart.json";
 
 // Embed the plot
 vegaEmbed("#vega-viz", spec)        
@@ -41,3 +42,5 @@ vegaEmbed("#vega-viz", spec)
     .catch(console.warn);
 
 
+// Embed a heatmap
+vegaEmbed("#vega-heatmap", heatmapSpec).catch(console.warn);
